@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Rorisang Numa — HR Assistant Officer at Power Engineering, aspiring business leader connecting Africa through media and advertising." />
+  <title>Rorisang Numa — HR Professional & Aspiring Business Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --warm-white: #f5f0e8;
+      --charcoal: #1a1a1a;
+      --mid: #4a4a4a;
+      --soft: #8a8279;
+      --accent: #b5804e;
+      --accent-light: #d4a574;
+      --data-accent: #3a6b5c;
+      --data-light: #5a9e8a;
+      --border: rgba(26,26,26,0.12);
+      --section-gap: 6rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250,247,242,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;
+      color: var(--charcoal); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mid); text-decoration: none; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 7rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -10%; right: -5%;
+      width: 55vw; height: 55vw; max-width: 700px; max-height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(181,128,78,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.5rem; font-weight: 500;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--charcoal);
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-tagline {
+      margin-top: 1.5rem;
+      font-size: 1rem; color: var(--soft); font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+    .hero-tagline strong { color: var(--mid); font-weight: 400; }
+    .hero-bio {
+      margin-top: 1.5rem;
+      max-width: 540px;
+      font-size: 1rem; color: var(--mid); line-height: 1.8;
+    }
+    .hero-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-primary {
+      background: var(--charcoal); color: var(--cream);
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline {
+      border: 1px solid var(--charcoal); color: var(--charcoal);
+    }
+    .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      padding: var(--section-gap) 3rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--soft); margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300;
+      line-height: 1.15; color: var(--charcoal);
+    }
+    .section-heading em { font-style: italic; color: var(--accent); }
+    .section-divider {
+      width: 48px; height: 1px;
+      background: var(--accent); margin: 1.5rem 0;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--warm-white);
+      padding: var(--section-gap) 0;
+    }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .about-text p { color: var(--mid); line-height: 1.9; margin-bottom: 1.2rem; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .tag {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border: 1px solid var(--border);
+      color: var(--soft); border-radius: 100px; font-weight: 500;
+    }
+    .tag.data { border-color: var(--data-accent); color: var(--data-accent); }
+    .tag.vibe { border-color: var(--accent); color: var(--accent); background: rgba(181,128,78,0.06); }
+    .personality-quote {
+      margin-top: 1.75rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--accent);
+      background: rgba(181,128,78,0.05);
+      border-radius: 0 4px 4px 0;
+    }
+    .personality-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--mid); line-height: 1.8; margin-bottom: 0 !important;
+    }
+    .highlights-strip {
+      margin-top: 2rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .highlight-item {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 0.85rem 1rem;
+      background: var(--cream); border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+    .highlight-item .hi-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .highlight-item .hi-text { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+    .highlight-item .hi-text strong { color: var(--charcoal); font-weight: 500; }
+    .about-stats { display: grid; gap: 2rem; }
+    .stat-block { border-left: 2px solid var(--accent); padding-left: 1.25rem; }
+    .stat-block .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 300; color: var(--accent);
+      line-height: 1;
+    }
+    .stat-block .desc { font-size: 0.85rem; color: var(--soft); margin-top: 0.25rem; }
+
+    /* ── PHOTO PLACEHOLDER ── */
+    .photo-placeholder {
+      width: 100%; aspect-ratio: 3/4; max-width: 340px;
+      background: var(--warm-white);
+      border: 2px dashed rgba(181,128,78,0.35);
+      border-radius: 6px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.75rem; cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+      position: relative; overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .photo-placeholder:hover { border-color: var(--accent); background: rgba(181,128,78,0.04); }
+    .photo-placeholder .ph-icon {
+      font-size: 2.5rem; opacity: 0.4;
+    }
+    .photo-placeholder .ph-label {
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--soft); font-weight: 500; text-align: center; padding: 0 1rem;
+    }
+    .photo-placeholder .ph-sub {
+      font-size: 0.7rem; color: rgba(138,130,121,0.7); text-align: center; padding: 0 1.5rem;
+    }
+    .photo-placeholder input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .photo-preview {
+      width: 100%; height: 100%; object-fit: cover;
+      position: absolute; inset: 0; border-radius: 4px;
+      display: none;
+    }
+
+    /* ── VIDEO / AUDIO PITCH PLACEHOLDER ── */
+    .pitch-media {
+      margin-top: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .media-placeholder {
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.2);
+      border-radius: 6px; padding: 2rem 1.5rem;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0.75rem; text-align: center;
+      transition: border-color 0.25s, background 0.25s; cursor: pointer;
+      position: relative; overflow: hidden;
+    }
+    .media-placeholder:hover { border-color: var(--accent-light); background: rgba(255,255,255,0.07); }
+    .media-placeholder .mp-icon { font-size: 2rem; opacity: 0.6; }
+    .media-placeholder .mp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 400; color: rgba(255,255,255,0.85);
+    }
+    .media-placeholder .mp-desc {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6;
+    }
+    .media-placeholder .mp-btn {
+      margin-top: 0.5rem;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5);
+      padding: 0.4rem 1.1rem; border-radius: 100px; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .media-placeholder:hover .mp-btn { border-color: var(--accent-light); color: var(--accent-light); }
+    .media-placeholder input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    @media (max-width: 600px) { .pitch-media { grid-template-columns: 1fr; } }
+
+    /* ── PORTFOLIO CARDS ── */
+    #portfolio { background: var(--cream); }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      position: relative;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; color: var(--border);
+      line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;
+    }
+    .card-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .card-subtitle {
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--soft); margin-bottom: 0.4rem; font-weight: 500;
+    }
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem;
+      color: var(--charcoal);
+    }
+    .card ul { list-style: none; padding: 0; }
+    .card ul li {
+      font-size: 0.88rem; color: var(--mid); padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border); line-height: 1.5;
+    }
+    .card ul li:last-child { border-bottom: none; }
+    .card ul li::before { content: '– '; color: var(--soft); }
+
+    /* ── DATA SCIENCE CARD (special) ── */
+    .card.data-card {
+      border: 1px solid var(--data-accent);
+      background: linear-gradient(135deg, #f0f7f4 0%, var(--warm-white) 100%);
+    }
+    .card.data-card .card-num { color: rgba(58,107,92,0.12); }
+    .card.data-card .card-subtitle { color: var(--data-accent); }
+    .card.data-card h3 { color: var(--data-accent); }
+    .card.data-card ul li::before { color: var(--data-light); }
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--data-accent); color: white;
+      padding: 0.25rem 0.7rem; border-radius: 100px;
+      margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .portfolio-link-box {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: rgba(58,107,92,0.07);
+      border-radius: 3px;
+      border: 1px dashed var(--data-light);
+    }
+    .portfolio-link-box p {
+      font-size: 0.78rem; color: var(--data-accent);
+      letter-spacing: 0.04em; margin-bottom: 0.6rem;
+      font-weight: 500; text-transform: uppercase;
+    }
+    .portfolio-link-placeholder {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85rem; color: var(--soft);
+      font-style: italic;
+    }
+    .placeholder-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--data-light); flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* ── STRENGTHS & ACHIEVEMENTS ── */
+    #strengths {
+      background: var(--warm-white);
+      padding: var(--section-gap) 0;
+    }
+    .two-col {
+      max-width: 1100px; margin: 0 auto; padding: 0 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    }
+    .list-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; margin-bottom: 1.25rem;
+      color: var(--charcoal);
+    }
+    .check-list { list-style: none; padding: 0; }
+    .check-list li {
+      font-size: 0.9rem; color: var(--mid);
+      padding: 0.55rem 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .check-list li::before {
+      content: '✓'; color: var(--accent); font-size: 0.8rem;
+      margin-top: 0.15rem; flex-shrink: 0; font-weight: 500;
+    }
+    .check-list li.data::before { color: var(--data-accent); }
+
+    /* ── PITCH ── */
+    #pitch { background: var(--charcoal); }
+    .pitch-inner {
+      max-width: 1100px; margin: 0 auto; padding: var(--section-gap) 3rem;
+    }
+    .pitch-inner .section-heading { color: var(--cream); }
+    .pitch-inner .section-label { color: rgba(255,255,255,0.4); }
+    .pitch-inner .section-divider { background: var(--accent-light); }
+    blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.85); line-height: 1.8;
+      border-left: 2px solid var(--accent-light);
+      padding-left: 2rem; margin: 2.5rem 0;
+    }
+    blockquote strong { font-style: normal; font-weight: 400; color: var(--accent-light); }
+    .pitch-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .pitch-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px; padding: 1.75rem;
+    }
+    .pitch-card .p-label {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent-light); margin-bottom: 0.5rem; font-weight: 500;
+    }
+    .pitch-card .p-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 400; color: white; margin-bottom: 0.75rem;
+    }
+    .pitch-card p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .coming-soon {
+      display: inline-block;
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.4);
+      padding: 0.4rem 1rem; border-radius: 100px; margin-top: 2rem; font-weight: 500;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--cream); }
+    .contact-inner {
+      max-width: 1100px; margin: 0 auto; padding: var(--section-gap) 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      text-decoration: none; color: var(--mid);
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border); border-radius: 3px;
+      transition: all 0.2s; font-size: 0.9rem;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link .cl-icon { font-size: 1.1rem; }
+    .contact-link .cl-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--soft); display: block; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block; font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--soft); margin-bottom: 0.5rem; font-weight: 500;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      background: var(--warm-white); border: 1px solid var(--border);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--charcoal);
+      border-radius: 2px; outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .btn-submit {
+      width: 100%; padding: 0.9rem;
+      background: var(--charcoal); color: var(--cream);
+      border: none; cursor: pointer; border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 500; transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal); color: rgba(255,255,255,0.4);
+      text-align: center; padding: 2rem 3rem;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+    }
+    footer nav { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; list-style: none; }
+    footer nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    footer nav a:hover { color: var(--accent-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .section, .pitch-inner, .contact-inner, .two-col { padding-left: 1.5rem; padding-right: 1.5rem; }
+      #hero { padding: 6rem 1.5rem 3rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.5rem; }
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pitch-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-brand">Rorisang.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#pitch">Pitch</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-label">HR Professional · South Africa</p>
+    <h1 class="hero-name">Rorisang <em>Numa</em></h1>
+    <p class="hero-tagline">
+      <strong>HR Assistant Officer</strong> · Aspiring Business Leader · Beginner in Data Science
+    </p>
+    <p class="hero-bio">
+      Passionate about communication, leadership, teamwork, and building meaningful connections across Africa through business, media innovation, and data-driven insight.
+    </p>
+    <div class="hero-buttons">
+      <a href="#portfolio" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="section-heading">More Than<br/>a <em>Title</em></h2>
+        <div class="section-divider"></div>
+        <p>Rorisang Numa is an HR Assistant Officer at Power Engineering, bringing hands-on experience in administration, communication, and people management to everything she does.</p>
+        <p>She is passionate about creating positive work environments and aspires to build a billboard company that connects African countries through media and advertising — a vision rooted in Pan-African collaboration and opportunity. Currently expanding her skill set into <strong>data science</strong>, exploring how data-driven thinking can sharpen decision-making in HR and business leadership.</p>
+
+        <!-- PERSONALITY PEEK -->
+        <div class="personality-quote">
+          <p>"I'm energetic, eager to learn, and even quicker to implement. I love a well-placed sarcastic comment and have a talent for bringing lightness to any room. Life has its own load of downs — but I live for the highs. I bask in the goodness of God and life, and that joy shows up in everything I do."</p>
+        </div>
+
+        <!-- CAREER HIGHLIGHTS -->
+        <div class="highlights-strip">
+          <div class="highlight-item">
+            <span class="hi-icon">🎤</span>
+            <span class="hi-text"><strong>MC, Company Awards Ceremony</strong> — Chosen to host Power Engineering's annual awards night, trusted to represent the organisation on its biggest internal stage.</span>
+          </div>
+          <div class="highlight-item">
+            <span class="hi-icon">🏆</span>
+            <span class="hi-text"><strong>Led Two Major Projects</strong> — Took ownership of two of the company's most significant projects and delivered both successfully, start to finish.</span>
+          </div>
+        </div>
+
+        <div class="about-tags" style="margin-top:1.5rem;">
+          <span class="tag">Communication</span>
+          <span class="tag">Leadership</span>
+          <span class="tag">Teamwork</span>
+          <span class="tag">Resilience</span>
+          <span class="tag vibe">Energetic</span>
+          <span class="tag vibe">Good Vibes</span>
+          <span class="tag">Pan-African Vision</span>
+          <span class="tag">Christian Values</span>
+          <span class="tag data">Data Science</span>
+        </div>
+      </div>
+      <div class="about-stats">
+
+        <!-- PHOTO PLACEHOLDER -->
+        <div class="photo-placeholder" onclick="this.querySelector('input').click()">
+          <img class="photo-preview" id="photoPreview" alt="Profile photo" />
+          <span class="ph-icon">📷</span>
+          <span class="ph-label">Your Photo Here</span>
+          <span class="ph-sub">Click to upload a profile photo</span>
+          <input type="file" accept="image/*" onchange="
+            const file = this.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = e => {
+                const img = document.getElementById('photoPreview');
+                img.src = e.target.result;
+                img.style.display = 'block';
+                this.closest('.photo-placeholder').querySelector('.ph-icon').style.display='none';
+                this.closest('.photo-placeholder').querySelector('.ph-label').style.display='none';
+                this.closest('.photo-placeholder').querySelector('.ph-sub').style.display='none';
+              };
+              reader.readAsDataURL(file);
+            }
+          " />
+        </div>
+
+        <div class="stat-block">
+          <div class="num">HR</div>
+          <div class="desc">Assistant Officer at Power Engineering</div>
+        </div>
+        <div class="stat-block">
+          <div class="num">🌍</div>
+          <div class="desc">Pan-African media & billboard vision</div>
+        </div>
+        <div class="stat-block" style="border-color: var(--data-accent)">
+          <div class="num" style="color:var(--data-accent); font-size:1.5rem;">📊</div>
+          <div class="desc">Beginner in data science — exploring analytics & insight</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section">
+      <p class="section-label">Portfolio & Work Samples</p>
+      <h2 class="section-heading">What I <em>Do</em></h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--soft); font-size:0.9rem;">A curated look at my skills, roles, and professional accomplishments</p>
+
+      <div class="portfolio-grid">
+
+        <!-- Card 1: HR -->
+        <div class="card">
+          <span class="card-num">01</span>
+          <div class="card-icon">🗂️</div>
+          <p class="card-subtitle">Core Expertise</p>
+          <h3>HR Administration</h3>
+          <ul>
+            <li>Office support and day-to-day HR operations at Power Engineering</li>
+            <li>Employee record management and compliance documentation</li>
+            <li>Team coordination and scheduling across departments</li>
+            <li>On-boarding support and new employee communication</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Leadership -->
+        <div class="card">
+          <span class="card-num">02</span>
+          <div class="card-icon">🤝</div>
+          <p class="card-subtitle">People Skills</p>
+          <h3>Leadership & Teamwork</h3>
+          <ul>
+            <li>Strong written & verbal communication</li>
+            <li>Cross-functional team collaboration</li>
+            <li>Conflict navigation & problem solving</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Business -->
+        <div class="card">
+          <span class="card-num">03</span>
+          <div class="card-icon">🌍</div>
+          <p class="card-subtitle">Entrepreneurial Vision</p>
+          <h3>Business Innovation</h3>
+          <ul>
+            <li>Billboard advertising concept for African markets</li>
+            <li>Cross-border media & collaboration strategy</li>
+            <li>Values-based business leadership model</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: DATA SCIENCE — NEW -->
+        <div class="card data-card">
+          <span class="card-num">04</span>
+          <div class="card-icon">📊</div>
+          <span class="ds-badge">⚡ New &amp; Growing</span>
+          <p class="card-subtitle">Emerging Skill</p>
+          <h3>Data Science</h3>
+          <ul>
+            <li>Currently learning foundations of data analysis</li>
+            <li>Exploring tools like Python, Excel analytics &amp; visualisation</li>
+            <li>Applying data thinking to HR insights and business decisions</li>
+            <li>Committed to continuous learning in this space</li>
+          </ul>
+
+          <!-- PORTFOLIO LINK PLACEHOLDER -->
+          <div class="portfolio-link-box">
+            <p>📂 Data Science Portfolio</p>
+            <div class="portfolio-link-placeholder">
+              <div class="placeholder-dot"></div>
+              <span>Portfolio link coming soon — replace with your URL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS & ACHIEVEMENTS -->
+  <section id="strengths">
+    <div class="two-col">
+      <div>
+        <p class="section-label">Strengths</p>
+        <h2 class="section-heading" style="font-size:1.8rem;">Core <em>Abilities</em></h2>
+        <div class="section-divider"></div>
+        <ul class="check-list">
+          <li>Strong communication — written, verbal, and interpersonal</li>
+          <li>Team collaboration and a natural ability to uplift others</li>
+          <li>Resilience and determination under pressure</li>
+          <li>Attention to detail in administrative processes</li>
+          <li class="data">Curiosity and commitment to learning data science</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label">Achievements</p>
+        <h2 class="section-heading" style="font-size:1.8rem;">Key <em>Milestones</em></h2>
+        <div class="section-divider"></div>
+        <ul class="check-list">
+          <li>Secured HR Assistant Officer role at Power Engineering</li>
+          <li>Developed practical HR support and admin expertise</li>
+          <li>🎤 Selected as MC for the company's annual Awards Ceremony — trusted to represent the organisation on a high-profile stage</li>
+          <li>🏆 Successfully led and delivered two of the company's biggest projects, from planning through execution</li>
+          <li>Built a clear, long-term vision for an African media business</li>
+          <li>Continued professional development through ongoing learning</li>
+          <li class="data">Begun data science journey — applying analytical skills to real-world problems</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PITCH -->
+  <section id="pitch">
+    <div class="pitch-inner">
+      <p class="section-label">Elevator Pitch</p>
+      <h2 class="section-heading">My Value <em>Proposition</em></h2>
+      <div class="section-divider"></div>
+      <blockquote>
+        "Hello — I'm <strong>Rorisang Numa</strong>, an HR Assistant Officer at Power Engineering. I'm passionate about <strong>communication, teamwork, and creating positive work environments</strong> that help people and businesses grow. With a vision to one day connect African nations through media and advertising — and a growing interest in <strong>data science</strong> — I bring both practical HR expertise and an entrepreneurial, data-curious mindset to every opportunity I pursue."
+      </blockquote>
+      <div class="pitch-cards">
+        <div class="pitch-card">
+          <p class="p-label">Background</p>
+          <p class="p-title">HR & Administration</p>
+          <p>Practical experience in HR support, record management, and team coordination at a professional engineering firm.</p>
+        </div>
+        <div class="pitch-card">
+          <p class="p-label">Top Skills</p>
+          <p class="p-title">People & Communication</p>
+          <p>A natural communicator and team collaborator, with the resilience and emotional intelligence to build strong professional relationships.</p>
+        </div>
+        <div class="pitch-card" style="border-color: rgba(90,158,138,0.3);">
+          <p class="p-label" style="color:var(--data-light);">New Chapter</p>
+          <p class="p-title" style="color:var(--data-light);">Data Science Journey</p>
+          <p>Beginner in data science, building foundational skills in analytics and data-driven thinking to complement HR and business leadership.</p>
+        </div>
+      </div>
+      <!-- VIDEO / AUDIO PITCH PLACEHOLDERS -->
+      <div class="pitch-media">
+        <div class="media-placeholder">
+          <span class="mp-icon">🎬</span>
+          <span class="mp-title">Video Pitch</span>
+          <p class="mp-desc">Upload a short video introducing yourself — let your personality shine through.</p>
+          <span class="mp-btn">▶ Upload Video</span>
+          <input type="file" accept="video/*" onchange="
+            const file = this.files[0];
+            if (file) {
+              const url = URL.createObjectURL(file);
+              const box = this.closest('.media-placeholder');
+              box.innerHTML = '<video controls style=\'width:100%;border-radius:4px;display:block\'><source src=\'' + url + '\'></video>';
+            }
+          " />
+        </div>
+        <div class="media-placeholder">
+          <span class="mp-icon">🎙️</span>
+          <span class="mp-title">Audio Pitch</span>
+          <p class="mp-desc">Prefer audio? Upload a voice recording of your elevator pitch.</p>
+          <span class="mp-btn">♪ Upload Audio</span>
+          <input type="file" accept="audio/*" onchange="
+            const file = this.files[0];
+            if (file) {
+              const url = URL.createObjectURL(file);
+              const box = this.closest('.media-placeholder');
+              box.innerHTML = '<p style=\'color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:0.75rem\'>🎙️ Audio Pitch</p><audio controls style=\'width:100%\'><source src=\'' + url + '\'></audio>';
+            }
+          " />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 class="section-heading">Let's <em>Connect</em></h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--soft); font-size:0.9rem; margin-bottom:0.5rem;">Whether you have an opportunity, a project, or simply want to connect — I'd love to hear from you.</p>
+        <div class="contact-links">
+          <a href="mailto:yourname@email.com" class="contact-link">
+            <span class="cl-icon">✉</span>
+            <span><span class="cl-label">Email</span>yourname@email.com</span>
+          </a>
+          <a href="tel:+27000000000" class="contact-link">
+            <span class="cl-icon">📱</span>
+            <span><span class="cl-label">Phone</span>+27 XX XXX XXXX</span>
+          </a>
+          <a href="https://linkedin.com/in/rorisangnuma" target="_blank" class="contact-link">
+            <span class="cl-icon">in</span>
+            <span><span class="cl-label">LinkedIn</span>linkedin.com/in/rorisangnuma</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">Send a Message</p>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="What's this about?" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Your message…"></textarea>
+        </div>
+        <button class="btn-submit">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Work</a>
+      <a href="#pitch">Pitch</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p>Rorisang Numa — HR Professional & Aspiring Business Leader</p>
+  </footer>
+
+</body>
+</html>
