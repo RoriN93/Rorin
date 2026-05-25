@@ -538,28 +538,14 @@
       </div>
       <div class="about-stats">
 
-        <!-- PHOTO PLACEHOLDER -->
-        <div class="photo-placeholder" onclick="this.querySelector('input').click()">
-          <img class="photo-preview" id="photoPreview" alt="Profile photo" />
-          <span class="ph-icon">📷</span>
-          <span class="ph-label">Your Photo Here</span>
-          <span class="ph-sub">Click to upload a profile photo</span>
-          <input type="file" accept="image/*" onchange="
-            const file = this.files[0];
-            if (file) {
-              const reader = new FileReader();
-              reader.onload = e => {
-                const img = document.getElementById('photoPreview');
-                img.src = e.target.result;
-                img.style.display = 'block';
-                this.closest('.photo-placeholder').querySelector('.ph-icon').style.display='none';
-                this.closest('.photo-placeholder').querySelector('.ph-label').style.display='none';
-                this.closest('.photo-placeholder').querySelector('.ph-sub').style.display='none';
-              };
-              reader.readAsDataURL(file);
-            }
-          " />
-        </div>
+       <!-- PROFILE PHOTO -->
+<img
+  src="profile.jpg"
+  alt="Rorisang Numa"
+  style="width:100%; max-width:340px; aspect-ratio:3/4;
+         object-fit:cover; border-radius:6px;
+         display:block; margin-bottom:1.5rem;"
+/>
 
         <div class="stat-block">
           <div class="num">HR</div>
